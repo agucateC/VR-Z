@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-  <title>Visualizador 3D - Modelo Sketchfab</title>
+  <title>ZOMBIE SURVIVAL VR</title>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimum-scale=1.0">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -16,14 +15,6 @@
 <body>
   <div id="container"></div>
 
-  <script type="importmap">
-			{
-                "imports": {
-                  "three": "https://unpkg.com/three@v0.163.0/build/three.module.js",
-                  "three/addons/": "https://unpkg.com/three@v0.163.0/examples/jsm/"
-                }
-            }
-		</script>
   <div id="loading-screen">
     <div id="logo"></div>
     <div id="progress-text">Cargando... 0%</div>
@@ -31,11 +22,37 @@
       <div id="progress-bar"></div>
     </div>
   </div>
+  
+  <div id="startScreen" class="game-screen">
+    <h1>Zombie Survival</h1>
+    <button id="startBtn">Comenzar Juego</button>
+    <button id="vrBtn">Modo VR</button>
+  </div>
+
+  <div id="pauseScreen" class="game-screen" style="display:none;">
+    <h1>Juego Pausado</h1>
+    <button id="resumeBtn">Continuar</button>
+    <button id="quitBtn">Salir</button>
+  </div>
+
+  <div id="hud">
+    <div id="zombieCounter">Zombies eliminados: 0</div>
+    <!-- Tu healthBar existente -->
+  </div>
+  
   <div id="deathMessage" style="display: none;">
     <div id="deathText"></div>
     <button id="restartBtn">Reintentar</button>
   </div>
+  <script type="importmap">
+    {
+      "imports": {
+      "three": "https://unpkg.com/three@v0.163.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@v0.163.0/examples/jsm/"
+    }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/stats.js@0.17.0/build/stats.min.js"></script>
   <script type="module" src="js/main.js"></script>
 </body>
-
 </html>
